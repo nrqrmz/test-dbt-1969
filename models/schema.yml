@@ -3,8 +3,11 @@ version: 2
 sources:
   - name: circle
     schema: raw_data_circle
+    description: raw circle data
     tables:
       - name: funnel
         identifier: raw_cc_funnel
+        description: raw circle funnel data
       - name: funnel_priority
         identifier: raw_cc_funnel_priority
+        description: raw circle funnel priority data
