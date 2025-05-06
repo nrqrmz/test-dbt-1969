@@ -10,7 +10,8 @@ renamed as (
 
     select
         compny_name as company,
-        priority
+        -- priority
+        replace(priority, 'loow', 'Low') as priority
 
     from source
 
