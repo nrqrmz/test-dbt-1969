@@ -1,7 +1,10 @@
 version: 2
 
 sources:
-  - name: raw_data_circle
+  - name: circle
+    schema: raw_data_circle
     tables:
-      - name: raw_cc_funnel
-      - name: raw_cc_funnel_priority
+      - name: funnel
+        identifier: raw_cc_funnel
+      - name: funnel_priority
+        identifier: raw_cc_funnel_priority
