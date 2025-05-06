@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+  - name: circle
+    schema: raw_data_circle
+    description: raw circle data
+    tables:
+      - name: funnel
+        identifier: raw_cc_funnel
+        description: raw circle funnel data
+      - name: funnel_priority
+        identifier: raw_cc_funnel_priority
+        description: raw circle funnel priority data
+
+models:
+  - name: stg_circle__funnel
+    description: clean circle funnel data
+    columns:
+      - name: company
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: date_lead
+        description: date of lead
+        tests:
+          - not_null
+  - name: stg_circle__funnel_priority
+    description: clean circle funnel priority data
+    columns:
+      - name: company
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: priority
+        description: priority status
+        tests:
+          - accepted_values:
+              values: ['Low', 'Medium', 'High']
+
+          
